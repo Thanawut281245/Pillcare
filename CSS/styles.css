@@ -1,0 +1,244 @@
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Noto+Sans+Thai:wght@100..900&display=swap');
+
+/* Global styles */
+body, html {
+    background-color: #f4f4f4;
+    font-family: "Noto Sans Thai", sans-serif;
+    height: 100%; /* Ensure full height of the page */
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Allow the whole page to scroll */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #ffffff; /* Background color of navbar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for navbar */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Size of the brand text */
+}
+
+/* Chatbot container */
+.chat-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it takes full screen height */
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Chat header */
+.chat-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.chat-header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Chat messages */
+.chat-box {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    overflow-y: auto; 
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    
+}
+
+.chat-box img {
+    border-radius: 8px;
+    max-height: 200px; 
+    max-width: 150px; 
+    margin: 5px 0;
+}
+
+.chat-message {
+    border-radius: 10px;
+    display: inline-block;
+    margin: 5px;
+    max-width: 70%; 
+    padding: 8px 12px;
+    word-wrap: break-word; 
+}
+
+.chat-message.bot {
+    align-self: flex-start;
+    background-color: #e8e8e8;
+    color: #000;
+}
+
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Bottom Navigation Bar */ 
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa; /* Light background for visibility */
+    border-top: 2px solid #dee2e6; /* Border for separation */
+    padding: 0px 0; /* Padding for spacing */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Input group - Ensure input stays at the bottom of the page */
+.input-group {
+    display: flex; 
+    justify-content: center; 
+    margin-top: auto; 
+    padding: 10px 0;
+}
+
+.chat-textarea {
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    box-sizing: border-box;
+    max-width: 60%; /* Allow flexibility */
+    min-width: 250px; /* Ensure it doesn’t get too narrow */
+    width: 100%; 
+}
+
+/* Chat buttons */
+.chat-button {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;  
+    border-radius: 25px; /* Make buttons round */
+    padding: 12px 20px; /* Slightly larger buttons */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.chat-button:hover {
+    background-color: #0056b3; 
+}
+
+/* Adjust form controls for better layout */
+.input-group .form-control {
+    border-right: 0;
+}
+
+.input-group .form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+}
+
+.input-group-append .btn {
+    margin-left: 1px; /* Space between buttons and input */
+}
+
+.input-group .input-group-append .btn:hover {
+    background: #e9ecef;
+}
+
+/* Image preview styling */
+.image-preview img {
+    display: block;
+    margin: 10px 0;
+    max-height: 150px; 
+    max-width: 100%; 
+    object-fit: contain;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Less margin for smaller screens */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 450px; /* Ensure the modal does not exceed this width */
+    border-radius: 10px; /* Rounded corners for modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Additional styles for modal inputs */
+.modal label {
+    display: block; /* Ensures labels are on new lines */
+    margin: 10px 0 5px; /* Spacing for labels */
+}
+
+.modal input {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 8px; /* Padding inside inputs */
+    border: 1px solid #ced4da; /* Consistent border color */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.modal button {
+    margin-top: 15px; /* Space above submit button */
+    padding: 10px 15px; /* Padding for buttons */
+    background-color: #007bff; /* Consistent button color */
+    color: #fff; /* Text color for buttons */
+    border: none; /* Remove default button border */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.modal button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Center logo styling */
+.logo img {
+    border-radius: 50%; /* Make the logo circular */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add soft shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.user-image {
+    align-self: flex-end; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+    max-width: 200px; 
+    max-height: 200px; 
+    width: auto;
+    height: auto;
+}
