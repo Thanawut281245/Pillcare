@@ -3,5 +3,6 @@ services:
     name: Pillcare-web
     env: python
     plan: free  # หรือปรับเป็นตามแผนที่คุณต้องการ
+    pythonVersion: 3.10.12
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn app:app"
