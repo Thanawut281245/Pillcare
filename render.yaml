@@ -5,4 +5,4 @@ services:
     plan: free  # หรือปรับเป็นตามแผนที่คุณต้องการ
     pythonVersion: 3.10.12
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    startCommand: "gunicorn API.app:app"
